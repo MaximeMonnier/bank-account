@@ -4,25 +4,20 @@ const formSpent = document.querySelector(".container_spent");
 const formRent = document.querySelector(".container_rent");
 const pres = document.getElementById("precedent");
 const suiv = document.getElementById("suivant");
-console.log(pres);
-console.log(suiv);
-
 const slide = new Array(
+  "./assest/investment-5241253_1920.jpg",
   "./assest/money-2724241_1920.jpg",
-  "./assest/maoney_2.jpg",
-  "./assest/investment-5241253_1920.jpg"
+  "./assest/maoney_2.jpg"
 );
 let numero = 0;
 let interval;
 
-console.log(slide.length - 2);
-
-// *********************** SLIDER AUTO***********************
+// *********************** SLIDER AUTO ***********************
 
 function ChangeSlide(sens) {
   numero = numero + sens;
   if (numero < 0) {
-    numero = slide.length;
+    numero = slide.length - 1;
   }
   if (numero > slide.length - 1) numero = 0;
   document.getElementById("slide").src = slide[numero];
@@ -30,7 +25,6 @@ function ChangeSlide(sens) {
 
   interval = setInterval("ChangeSlide(1)", 4000);
 }
-
 ChangeSlide(1);
 
 // *********************** calcul solde***********************
@@ -104,8 +98,13 @@ menuBurger.addEventListener("click", () => {
 
 //************************ */ pour le slide******************
 
-pres.addEventListener("click", ChangeSlide(-1));
-suiv.addEventListener("click", ChangeSlide(1));
+pres.addEventListener("click", () => {
+  ChangeSlide(-1);
+});
+
+suiv.addEventListener("click", () => {
+  ChangeSlide(1);
+});
 
 //************************** */ remove liste*******************
 
