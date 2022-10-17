@@ -2,27 +2,36 @@ const menuBurger = document.querySelector(".burger");
 const navLinks = document.querySelector(".nav_links");
 const formSpent = document.querySelector(".container_spent");
 const formRent = document.querySelector(".container_rent");
+const pres = document.getElementById("precedent");
+const suiv = document.getElementById("suivant");
+console.log(pres);
+console.log(suiv);
+
 const slide = new Array(
   "./assest/money-2724241_1920.jpg",
   "./assest/maoney_2.jpg",
   "./assest/investment-5241253_1920.jpg"
 );
 let numero = 0;
+let interval;
 
-console.log(slide);
+console.log(slide.length - 2);
 
 // *********************** SLIDER AUTO***********************
 
 function ChangeSlide(sens) {
   numero = numero + sens;
   if (numero < 0) {
-    numero = slide.length - 1;
+    numero = slide.length;
   }
   if (numero > slide.length - 1) numero = 0;
   document.getElementById("slide").src = slide[numero];
+  clearInterval(interval);
 
-  setInterval("ChangeSlide(1)", 4000);
+  interval = setInterval("ChangeSlide(1)", 4000);
 }
+
+ChangeSlide(1);
 
 // *********************** calcul solde***********************
 
@@ -87,6 +96,17 @@ formRent.addEventListener("submit", (e) => {
   storageSolde();
 });
 
+//************************ */ pour le menu burger******************
+
+menuBurger.addEventListener("click", () => {
+  navLinks.classList.toggle("mobil-menu");
+});
+
+//************************ */ pour le slide******************
+
+pres.addEventListener("click", ChangeSlide(-1));
+suiv.addEventListener("click", ChangeSlide(1));
+
 //************************** */ remove liste*******************
 
 list_spent.addEventListener("click", (e) => {
@@ -97,10 +117,4 @@ list_spent.addEventListener("click", (e) => {
 list_rent.addEventListener("click", (e) => {
   e.target.remove();
   storageSolde();
-});
-
-//************************ */ pour le menu burger******************
-
-menuBurger.addEventListener("click", () => {
-  navLinks.classList.toggle("mobil-menu");
 });
