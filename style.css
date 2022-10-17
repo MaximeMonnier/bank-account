@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&display=swap');
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+}
+
+
+
+/* ********************* HEADER *********************** */
+/* ********************* SLIDER *********************** */
+
+header {
+    height: auto;
+    width: 100%;
+    background-color: #BB9378;
+
+}
+
+header img {
+    height: auto;
+    width: 100%;
+}
+
+#slider {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+#precedent,
+#suivant {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    font-size: 100px;
+    color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+#precedent {
+    left: 0;
+}
+
+#suivant {
+    right: 0;
+}
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+    opacity: 1;
+}
+
+.presentation {
+    position: absolute;
+    font-size: 50px;
+    top: 300px;
+    left: 60px;
+    color: white;
+    line-height: 70px;
+}
+
+.btn_pres {
+    position: absolute;
+    font-size: 35px;
+    top: 530px;
+    left: 60px;
+    background-color: #BB9378;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.btn_pres a {
+    color: white;
+}
+
+.btn_pres:hover {
+    background-color: #89C803;
+    padding: 12px;
+}
+
+/* ********************* NAVIGATION *********************** */
+
+.burger {
+    display: none;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: black;
+}
+
+
+.navbar .logo {
+    background-image: url(./assest/Locani1a.png);
+    background-size: cover;
+    height: 80px;
+    width: 80px;
+    margin: 5px 0 5px 40px;
+}
+
+.navbar .nav_links ul {
+    display: flex;
+    padding-right: 50px;
+    list-style: none;
+}
+
+.navbar .nav_links ul li {
+    margin: 0 25px;
+}
+
+.navbar .nav_links ul li.active a {
+    color: black;
+    font-weight: bolder;
+}
+
+
+@media screen and (max-width: 980px) {
+    .navbar {
+        padding: 0;
+        position: absolute;
+    }
+
+    .burger {
+      display: unset;
+      font-size: 80px;
+      position: absolute;
+      top: 65px;
+      right: 50px;
+  }
+  .nav_links {
+    position: absolute;
+    background-color: rgba(216, 209, 209, 0.529);
+    backdrop-filter: blur(8px);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -100%;
+    transition: all 0.5s ease ;
+
+  }
+
+  .nav_links.mobil-menu {
+    margin-left: 0;
+}
+
+
+  .nav_links ul {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .navbar .nav_links ul li {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.navbar .logo {
+    background-image: url(./assest/Locani1a.png);
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    margin: 5px 0 5px 40px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+    
+}
+
+@media screen and (max-width: 600px) {
+    .presentation {
+        font-size: 30px;
+        line-height: 45px;
+        top: 200px;
+    }
+
+    .navbar .logo {
+        background-image: url(./assest/Locani1a.png);
+        background-size: cover;
+        height: 80px;
+        width: 80px;
+        margin: 5px 0 5px 40px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .burger {
+        font-size: 60px;
+    }
+}
+
+/* ********************* NOTRE OFFRE *********************** */
+
+.notre_offre {
+    height: 500px;
+    width: 100%;
+    padding-bottom: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article_offre {
+    display: flex ;
+    position: relative;
+}
+
+.article1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    height: 350px;
+    width: 600px;
+    background-image: url(./assest/lake-5756911_1920.jpg);
+    background-size: cover;
+    z-index: 1;
+}
+
+.article2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-140%, -50%);
+    height: 300px;
+    width: 280px;
+    background-color: #BB9378;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.article2,h2 {
+    color: white;
+    margin: 10px;
+    line-height: 35px;
+}
+
+.article2,p {
+    color: white;
+    margin: 10px;
+    line-height: 20px;
+}
+
+.txt {
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    width: 800px;
+    top: 350px;
+    text-align: center;
+    line-height: 25px;
+
+}
+
+@media screen and (max-width: 880px) {
+
+.article_offre {
+    display: flex ;
+    position: relative;
+}
+
+.article1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 350px;
+    width: 600px;
+    background-image: url(./assest/lake-5756911_1920.jpg);
+    background-size: cover;
+    z-index: 1;
+}
+
+.article2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 280px;
+    background-color: #BB9378;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.txt {
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    font-size: 12px;
+    width: 500px;
+    top: 350px;
+    left: -125px;
+    text-align: center;
+    line-height: 20px;
+
+}
+
+}
+
+@media screen and (max-width: 640px) {
+
+    .article_offre {
+        display: flex ;
+        position: relative;
+    }
+    
+    .article1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 350px;
+        width: 370px;
+        background-image: url(./assest/lake-5756911_1920.jpg);
+        background-size: cover;
+        z-index: 1;
+    }
+    
+    .article2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 250px;
+        width: 220px;
+        background-color: #BB9378;
+        opacity: 0.9;
+        z-index: 2;
+    }
+
+    .article2,h2 {
+        color: white;
+        margin: 10px;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    
+    .article2,p {
+        color: white;
+        margin: 10px;
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+    .txt {
+        color: black;
+        font-weight: bold;
+        position: absolute;
+        font-size: 12px;
+        width: 350px;
+        top: 300px;
+        left: -85px;
+        text-align: center;
+        line-height: 20px;
+    
+    }
+    
+    }
+
+    @media screen and (max-width: 500px) {
+
+        .txt {
+            color: black;
+            font-weight: bold;
+            position: absolute;
+            font-size: 11.5px;
+            width: 250px;
+            top: 300px;
+            left: -38px;
+            text-align: center;
+            line-height: 15px;
+        }
+
+    }
+
+    /* ********************* COMPTES *********************** */
+
+    .banque_account {
+        background-color: #BB9378;
+        width: 100%;
+    }
+
+    .presentation_compte {
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        padding-top: 30px;
+    }
+
+    .presentation_compte h2 {
+        color: black;
+        font-size: 40px;
+        padding: 20px 0 30px 40px
+
+    }
+
+    .presentation_compte p {
+        color: black;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 0 50px 0 0
+    }
+
+    .ligne {
+        background: black;
+        height: 1.5px;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .container_account {
+        display: flex;
+    }
+
+    .solde {
+        height: 230px;
+        width: 40%;
+        display: flex;
+        align-items: center;
+    }
+
+    span {
+        color: black;
+        font-size: 40px;
+        padding: 25.5px;
+        border: solid 2px black;
+    }
+
+    .solde h2 {
+        color: black;
+        font-size: 50px;
+        padding: 30px;
+        border: solid 2px black;
+        margin-left: 38px;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .ligne_col1 {
+        margin-top: 15px;
+        height: 200px;
+        width: 1.5px;
+        background: black;
+    }
+
+    .container_spent {
+        height: 230px;
+        width: 25%;
+    }
+    .inp_number {
+        margin: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .inp_number label {
+        font-size: 18px;
+        font-weight: bold;
+        padding-right: 45px;
+    }
+
+    .inp_number input {
+        height: 30px; 
+        width: 150px;
+    }
+
+    .inp_description {
+        margin: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .inp_description label {
+        font-size: 18px;
+        font-weight: bold;
+        padding-right: 18px;
+    }
+
+    .inp_description input {
+        height: 30px; 
+        width: 150px;
+    }
+
+    .inp_submit {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inp_submit input {
+        padding: 5px;
+        background-color: white;
+        border: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    .ligne_col {
+        margin: 15px 20px 0 20px;
+        height: 200px;
+        width: 1.5px;
+        background: black;
+    }
+
+
+    .container_rent {
+        height: 230px;
+        width: 25%;
+    }
+
+     /* ********************* LISTE *********************** */
+
+    .container_list {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .container_list li {
+        background-color: white;
+        padding: 5px;
+        margin: 5px;
+
+    }
+
+    .container_depense,.container_rentre {
+        width: 40%;
+        margin: 10px;
+    }
+
+    @media screen and (max-width: 1500px) {
+
+        .inp_number input {
+            height: 30px; 
+            width: 100px;
+        }
+    
+
+        .inp_description input {
+            height: 30px; 
+            width: 100px;
+        }
+    }
+
+    @media screen and (max-width: 1065px) {
+
+        .title h2 {
+            font-size: 20px;
+        }
+        
+        .inp_number input {
+            height: 30px; 
+            width: 80px;
+        }
+    
+
+        .inp_description input {
+            height: 30px; 
+            width: 80px;
+        }
+
+    }
+
+    @media screen and (max-width: 930px) {
+        .container_account {
+            flex-direction: column;
+        }
+
+        .solde {
+
+            height: auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container_spent {
+            height: 230px;
+            width: 100%;
+        }
+
+        .container_rent {
+            height: 230px;
+            width: 100%;
+        }
+
+        .inp_number {
+            margin: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inp_description {
+            margin: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ligne_col1 {
+            height: 1.5px;
+            width: 90%;
+            background: black;
+            margin: 0;
+        }
+
+        .ligne_col {
+            height: 1.5px;
+            width: 90%;
+            background: black;
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        .presentation_compte {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .solde h2 {
+            color: black;
+            font-size: 35px;
+            padding: 15px;
+            border: solid 2px black;
+            margin-left: 38px;
+        }
+
+        span {
+            color: black;
+            font-size: 35px;
+            padding: 10px;
+            border: solid 2px black;
+        }
+
+        
+
+    }
+
+        /* ********************* FOOTER *********************** */
+
+        .ligne1 {
+            height: 2px;
+            width: 90%;
+            background: black;
+            margin: 50px;
+        }
+
+        .container_footer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px ; 
+        }
+
+        .container_footer1,.container_footer2,.container_footer3 {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            width: 26%;
+        }
+
+        .container_footer2 a,.container_footer3 a,.container_footer4 a {
+            color: black;
+            margin-bottom: 10px;
+
+        }
+
+        .container_footer1 a {
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .logo_footer {
+            background-image: url(./assest/Locani1a.png);
+            background-size: cover;
+            height: 100px;
+            width: 100px;
+        }
+        
+        .container_footer2 h3,.container_footer3 h3 {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .container_footer4 {
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            width: 3%;
+        }
+
+        .container_footer4 p {
+            height: 20px;
+            width: 20px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .bande_footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+            background-color: #89C803;
+        }
+
+        .bande_footer a {
+            color: black;
+            font-weight: bold;
+        }
+        @media screen and (max-width: 780px) {
+            .container_footer2 h3, .container_footer3 h3 {
+   
+                font-size: 18px;
+            }
+
+            .container_footer1 , .container_footer2 , .container_footer3 , .container_footer4 {
+                width: 100%;
+                align-items: center;
+            }
+
+            .container_footer1 a, .container_footer2 a, .container_footer3 a, .container_footer4 a {
+                font-size: 14px;
+            }
+
+            .container_footer {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 50px;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+           
+        }
+
+
+
+    
+

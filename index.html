@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Locania</title>
+    <link rel="stylesheet"
+        href="./style.css">
+</head>
+
+<body>
+
+    <!-- ********** NAVBAR ***********  -->
+
+    <nav class="navbar">
+        <a href="#"
+            class="logo"></a>
+        <div class="nav_links">
+            <ul>
+                <li><a href="#accueil">ACCUEIL</a></li>
+                <li><a href="#offre">NOTRE OFFRE</a></li>
+                <li><a href="#compte">GESTION DE COMPTES</a></li>
+                <li><a href="#bourse">BOURSE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+        <p class="burger"><i class="fa-solid fa-bars"></i></p>
+    </nav>
+
+    <header>
+        <div id="slider">
+            <img src="./assest/money-2724241_1920.jpg"
+                alt="pot nature et argent"
+                id="slide">
+            <div id="precedent"
+                onclick="ChangeSlide(-1)">
+                < </div>
+                    <div id="suivant"
+                        onclick="ChangeSlide(1)">></div>
+            </div>
+        </div>
+        <div id="accueil"></div>
+        <h1 class="presentation">
+            LOACANIA<br>
+            LA BANQUE A<br>
+            VOTRE ECOUTE
+        </h1>
+        <button class="btn_pres"><a href="#offre">En savoir plus <i class="fa-brands fa-bitcoin"></i></a></button>
+    </header>
+
+    <!-- ********** NOTRE OFFRE ***********  -->
+
+    <main>
+        <div id="offre"></div>
+        <section class="notre_offre">
+            <div class="article_offre">
+                <div class="article1"></div>
+                <div class="article2">
+                    <h2>SOYER TRANQUILLE
+                        AVEC NOUS VOTRE
+                        ARGENT EST EN
+                        SECURITER </h2>
+                    <p>ou que vous soyer nous gardons
+                        un oeil sur vos comptes pour vous
+                        grace a nos consseiller expert qui gère
+                        tout pour vous !</p>
+                    <p class="txt">
+                        L’Union européenne apporte son soutien financier au Parc National de Conkouati-Douli au Congo.
+                        En prélude au lancement du projet intitulé « Converger intérêts socio-économiques et enjeux
+                        écologiques dans la gestion du Parc National de Conkouati-Douli », une cérémonie de signature du
+                        contrat de subvention a été organisée fin septembre, dans les locaux de la Délégation de l’Union
+                        européenne. Mis en œuvre par notre ONG Noé, ce projet a pour objectif d’assurer une gestion
+                        durable de la flore et de la faune du Parc National de Conkouati-Douli, tout en améliorant les
+                        conditions de vie des communautés dans et autour de ce dernier.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ********** BANQUE ACCOUNT ***********  -->
+
+        <div id="compte"></div>
+        <section class="banque_account">
+            <div class="presentation_compte">
+                <h2>Votre solde :</h2>
+                <div class="identitfiant">
+                    <p>n° de compte : 1254789632</p>
+                    <p>Mr Monnier Maxime</p>
+                </div>
+            </div>
+            <div class="ligne"></div>
+            <div class="container_account">
+                <div class="solde">
+                    <h2 id="total_solde">1000</h2>
+                    <span><i class="fa-solid fa-euro-sign"></i></span>
+                </div>
+
+                <div class="ligne_col1"></div>
+
+                <form class="container_spent">
+                    <div class="title">
+                        <h2>Ajouter une Dépense</h2>
+                    </div>
+                    <div class="inp_number">
+                        <label for="number">Montant:</label>
+                        <input type="number"
+                            name="form1"
+                            class="chiffre"
+                            id="number1"
+                            min="1"
+                            max="10000">
+                    </div>
+                    <div class="inp_description">
+                        <label for="description">Description:</label>
+                        <input type="text-area"
+                            class="area"
+                            id="description1"
+                            name="form1">
+                    </div>
+                    <div class="inp_submit">
+                        <input type="submit"
+                            name="form1"
+                            class="sub"
+                            id="submit1"
+                            value="Ajouter une Dépense">
+                    </div>
+                </form>
+
+                <div class="ligne_col"></div>
+
+                <form class="container_rent">
+                    <div class="title">
+                        <h2>Ajouter une Rente</h2>
+                    </div>
+                    <div class="inp_number">
+                        <label for="number">Montant:</label>
+                        <input type="number"
+                            name="form2"
+                            class="chiffre"
+                            id="number2"
+                            min="1"
+                            max="10000">
+                    </div>
+                    <div class="inp_description">
+                        <label for="description">Description:</label>
+                        <input type="text-area"
+                            class="area"
+                            id="description2"
+                            name="form2">
+                    </div>
+                    <div class="inp_submit">
+                        <input type="submit"
+                            name="form2"
+                            class="sub"
+                            id="submit2"
+                            value="Ajouter une Rente">
+                    </div>
+                </form>
+
+            </div>
+            <div class="ligne"></div>
+            <div class="container_list">
+                <div class="container_depense">
+                    <ul id="list_spent">DEPENSE
+                    </ul>
+                </div>
+                <div class="container_rentre">
+                    <ul id="list_rent">ENTRER
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ********** ARTICLE PROVISOIRE  ***********  -->
+
+        <div id="bourse"></div>
+        <section class="notre_offre">
+            <div class="article_offre">
+                <div class="article1"></div>
+                <div class="article2">
+                    <h2>SOYER TRANQUILLE
+                        AVEC NOUS VOTRE
+                        ARGENT EST EN
+                        SECURITER </h2>
+                    <p>ou que vous soyer nous gardons
+                        un oeil sur vos comptes pour vous
+                        grace a nos consseiller expert qui gère
+                        tout pour vous !</p>
+                    <p class="txt">
+                        L’Union européenne apporte son soutien financier au Parc National de Conkouati-Douli au Congo.
+                        En prélude au lancement du projet intitulé « Converger intérêts socio-économiques et enjeux
+                        écologiques dans la gestion du Parc National de Conkouati-Douli », une cérémonie de signature du
+                        contrat de subvention a été organisée fin septembre, dans les locaux de la Délégation de l’Union
+                        européenne. Mis en œuvre par notre ONG Noé, ce projet a pour objectif d’assurer une gestion
+                        durable de la flore et de la faune du Parc National de Conkouati-Douli, tout en améliorant les
+                        conditions de vie des communautés dans et autour de ce dernier.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ********** FOOTER  ***********  -->
+
+    <div id="contact"></div>
+    <footer>
+        <div class="ligne1"></div>
+        <div class="container_footer">
+            <div class="container_footer1">
+                <a href="#"
+                    class="logo_footer"></a>
+                <a href="#">FAQ's</a>
+                <a href="#">Nous contacter</a>
+                <a href="#">Accessibilité</a>
+            </div>
+            <div class="container_footer2">
+                <h3>Nos offres</h3>
+                <a>Gestion privé (vision Patrimoine)</a>
+                <a>Professionnels</a>
+                <a>Entreprise</a>
+                <a>Association & ESS</a>
+                <a>Immobilier professionel</a>
+                <a>Secteur public & Logement social</a>
+            </div>
+            <div class="container_footer3">
+                <h3>Votre Banque Locania</h3>
+                <a>Votre banque et vous</a>
+                <a>Qui sommes-nous ?</a>
+                <a>Le Pacte Sportif</a>
+                <a>Mécénat &Sponsoring</a>
+                <a>Etre sociétaire</a>
+                <a>Recrutement</a>
+            </div>
+            <div class="container_footer4">
+                <p><i class="fa-brands fa-facebook"></i></p>
+                <p><i class="fa-brands fa-twitter"></i></p>
+                <p><i class="fa-brands fa-linkedin"></i></p>
+                <p><i class="fa-brands fa-youtube"></i></p>
+            </div>
+        </div>
+        <div class="bande_footer">
+            <a href="https://github.com/MaximeMonnier"
+                target="_blank"> © 2022 Product By Maxime Monnier</a>
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+    <script src="https://kit.fontawesome.com/411a6a3294.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
