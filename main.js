@@ -62,16 +62,17 @@ function getSolde() {
 }
 getSolde();
 
-//********************** */ add element*******************
+//********************** */ add histoique liste *******************
 
 formSpent.addEventListener("submit", (e) => {
   e.preventDefault();
   let monSoldPrc = parseFloat(
     document.getElementById("total_solde").textContent
   );
+  let date = new Date().toLocaleString();
   list_spent.innerHTML += `<li>Depense de: ${number1.value + " Euro"} Pour: ${
     description1.value
-  } </li>`;
+  } le ${date}</li>`;
   calculSoldSpent(monSoldPrc);
   number1.value = "";
   description1.value = "";
@@ -83,7 +84,8 @@ formRent.addEventListener("submit", (e) => {
   let monSoldPrc = parseFloat(
     document.getElementById("total_solde").textContent
   );
-  list_rent.innerHTML += `<li>Rente de: ${number2.value} De la part de: ${description2.value} </li>`;
+  let date = new Date().toLocaleString();
+  list_rent.innerHTML += `<li>Rente de: ${number2.value} De la part de: ${description2.value} le ${date} </li>`;
   calculSoldRent(monSoldPrc);
   number2.value = "";
   description2.value = "";
