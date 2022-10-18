@@ -32,35 +32,36 @@ ChangeSlide(1);
 function calculSoldSpent(monSoldPrc) {
   let nouveauSolde = document.getElementById("total_solde");
   let montant = parseFloat(number1.value);
-  console.log(montant);
   let nouveauMontant = monSoldPrc - montant;
-  console.log(nouveauSolde);
   nouveauSolde.textContent = nouveauMontant;
-  console.log(monSoldPrc);
 }
 
 function calculSoldRent(monSoldPrc) {
   let nouveauSolde = document.getElementById("total_solde");
   let montant = parseFloat(number2.value);
-  console.log(montant);
   let nouveauMontant = monSoldPrc + montant;
-  console.log(nouveauSolde);
   nouveauSolde.textContent = nouveauMontant;
-  console.log(monSoldPrc);
 }
 
 // *********************storage element**************************
 
 function storageSolde() {
-  window.localStorage.listeSoldeSpent = list_spent.innerHTML;
-  window.localStorage.listeSoldeRent = list_rent.innerHTML;
+  window.localStorage.setItem("depense", list_spent.innerHTML);
+  window.localStorage.setItem("rente", list_rent.innerHTML);
+  window.localStorage.setItem("solde", total_solde.textContent);
 }
 
 function getSolde() {
-  list_spent.innerHTML = window.localStorage.listeSoldeSpent;
-  list_rent.innerHTML = window.localStorage.listeSoldeRent;
+  list_spent.innerHTML = window.localStorage.getItem("depense");
+  list_rent.innerHTML = window.localStorage.getItem("rente");
+  total_solde.textContent = window.localStorage.getItem("solde");
 }
-getSolde();
+
+if (window.localStorage.length == 0) {
+  ("");
+} else getSolde();
+
+console.log(window.localStorage.length);
 
 //********************** */ add histoique liste *******************
 
@@ -69,14 +70,19 @@ formSpent.addEventListener("submit", (e) => {
   let monSoldPrc = parseFloat(
     document.getElementById("total_solde").textContent
   );
+  if (number1.value == "") {
+    alert("Veuillez entrer une valeur svp !!!");
+    return monSoldPrc;
+  }
   let date = new Date().toLocaleString();
-  list_spent.innerHTML += `<li>Depense de: ${number1.value + " Euro"} Pour: ${
+  list_spent.innerHTML += `
+  <li>Depense de: ${number1.value + " Euro"} Pour: ${
     description1.value
   } le ${date}</li>`;
   calculSoldSpent(monSoldPrc);
+  storageSolde();
   number1.value = "";
   description1.value = "";
-  storageSolde();
 });
 
 formRent.addEventListener("submit", (e) => {
@@ -84,12 +90,16 @@ formRent.addEventListener("submit", (e) => {
   let monSoldPrc = parseFloat(
     document.getElementById("total_solde").textContent
   );
+  if (number2.value == "") {
+    alert("Veuillez entrer une valeur svp !!!");
+    return monSoldPrc;
+  }
   let date = new Date().toLocaleString();
   list_rent.innerHTML += `<li>Rente de: ${number2.value} De la part de: ${description2.value} le ${date} </li>`;
   calculSoldRent(monSoldPrc);
+  storageSolde();
   number2.value = "";
   description2.value = "";
-  storageSolde();
 });
 
 //************************ */ pour le menu burger******************
