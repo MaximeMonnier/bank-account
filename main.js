@@ -76,7 +76,7 @@ formSpent.addEventListener("submit", (e) => {
   }
   let date = new Date().toLocaleString();
   list_spent.innerHTML += `
-  <li>Depense de: ${number1.value + " Euro"} Pour: ${
+  <li>Depense de: ${number1.value + " €"} Pour: ${
     description1.value
   } le ${date}</li>`;
   calculSoldSpent(monSoldPrc);
@@ -95,7 +95,7 @@ formRent.addEventListener("submit", (e) => {
     return monSoldPrc;
   }
   let date = new Date().toLocaleString();
-  list_rent.innerHTML += `<li>Rente de: ${number2.value} De la part de: ${description2.value} le ${date} </li>`;
+  list_rent.innerHTML += `<li>Rente de: ${number2.value + " €"} De la part de: ${description2.value} le ${date} </li>`;
   calculSoldRent(monSoldPrc);
   storageSolde();
   number2.value = "";
